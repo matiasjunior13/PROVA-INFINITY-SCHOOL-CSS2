@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #584444;
+}
+
+h1{
+    text-align: center;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-usuario {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 12px 12px 35px;
+    font-size: 16px;
+    border: 1px solid #521919;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #5cb85c;
+    outline: none;
+}
+
+#nome-usuario::before{
+    content: "🔒";
+    position: absolute;
+    left: 12px;
+    top: 60%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #888;
+}
+
+#senha-usuario::before{
+    content: "🔒";
+    position: absolute;
+    left: 12px;
+    top: 60%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #888;
+}
+
+
+.form-botoes {
+    display: flex;
+    justify-content:first baseline;
+    gap: 10px;
+}
+
+.botao {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+}
+
+.botao::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: lightblue;
+    transition: width 0.5s ease;
+}
+
+.botao:hover {
+    background-color: white;
+    color: black;
+}
+
+.botao:hover::after {
+    width: 100%;
+}
+
+/*------------------------- Media Queries ------------------------------- */
+@media (max-width: 600px) {
+    .form-container {
+        width: 90%;
+        padding: 15px;
+    }
+}
+
+@media (min-width: 601px) {
+    .form-container {
+        width: 400px;
+    }
+}
